@@ -91,6 +91,8 @@ export async function POST(request: Request) {
           emailStatus: 'PENDING',
         },
       })
+    }, {
+      // TS type hint for transaction client is implicit, but explicit typing can be added if required
     })
 
     // Send confirmation email independently (non-blocking / error caught; never rolls back reservation)

@@ -24,16 +24,16 @@ export async function GET() {
     })
 
     const avgPartySize = reservations.length > 0
-      ? reservations.reduce((acc, r) => acc + r.partySize, 0) / reservations.length
+      ? reservations.reduce((acc: number, r: { partySize: number }) => acc + r.partySize, 0) / reservations.length
       : 0
 
     const hourlyMap = new Map<number, number>()
-    reservations.forEach(r => {
+    reservations.forEach((r: { date: Date | string }) => {
       const hour = new Date(r.date).getHours()
       hourlyMap.set(hour, (hourlyMap.get(hour) || 0) + 1)
     })
     const peakHours = Array.from(hourlyMap.entries())
-      .map(([hour, count]) => ({ hour, count }))
+      .map(([hour, count]: [number, number]) => ({ hour, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 5)
 
@@ -45,7 +45,7 @@ export async function GET() {
     }).reverse()
 
     last7Days.forEach(date => dailyMap.set(date, 0))
-    reservations.forEach(r => {
+    reservations.forEach((r: { date: Date | string, partySize: number }) => {
       const date = new Date(r.date).toISOString().split('T')[0]
       if (dailyMap.has(date)) {
         dailyMap.set(date, (dailyMap.get(date) || 0) + r.partySize * 500)
@@ -61,7 +61,7 @@ export async function GET() {
       confirmedReservations,
       pendingReservations,
       cancelledReservations,
-      totalRevenue: reservations.reduce((acc, r) => acc + r.partySize * 500, 0),
+      totalRevenue: reservations.reduce((acc: number, r: { partySize: number }) => acc + r.partySize * 500, 0),
       averagePartySize: Math.round(avgPartySize * 10) / 10,
       menuItems,
       inventoryItems,
