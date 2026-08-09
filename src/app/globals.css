@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  --color-sandstone: #c4a77d;
+  --color-sandstone-light: #dbc5a4;
+  --color-ivory: #f5f0e8;
+  --color-ivory-warm: #f0e6d3;
+  --color-maroon: #6b1d1d;
+  --color-maroon-deep: #4a1212;
+  --color-terracotta: #c2703e;
+  --color-terracotta-muted: #a85d33;
+  --color-walnut: #2c1810;
+  --color-walnut-deep: #1a0e08;
+  --color-brass: #b5903c;
+  --color-brass-light: #d4b06a;
+  --color-brass-dim: #8a6d2e;
+
+  --color-warm-black: #0f0a07;
+  --color-warm-dark: #1a120c;
+  --color-warm-mid: #2a1f16;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-warm-black);
+    color: var(--color-ivory);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-brass);
+    color: var(--color-warm-black);
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ─── Rajasthani Ornamental Utilities ─── */
+
+/* Jaali (lattice) pattern overlay */
+.jaali-pattern {
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 20%, rgba(181, 144, 60, 0.04) 20%, rgba(181, 144, 60, 0.04) 22%, transparent 22%),
+    radial-gradient(circle at 0% 0%, transparent 20%, rgba(181, 144, 60, 0.04) 20%, rgba(181, 144, 60, 0.04) 22%, transparent 22%),
+    radial-gradient(circle at 100% 0%, transparent 20%, rgba(181, 144, 60, 0.04) 20%, rgba(181, 144, 60, 0.04) 22%, transparent 22%),
+    radial-gradient(circle at 0% 100%, transparent 20%, rgba(181, 144, 60, 0.04) 20%, rgba(181, 144, 60, 0.04) 22%, transparent 22%),
+    radial-gradient(circle at 100% 100%, transparent 20%, rgba(181, 144, 60, 0.04) 20%, rgba(181, 144, 60, 0.04) 22%, transparent 22%);
+  background-size: 24px 24px;
+}
+
+/* Mandana-inspired geometric dots */
+.mandana-dots {
+  background-image: radial-gradient(circle, rgba(181, 144, 60, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Traditional textile border pattern */
+.textile-border {
+  height: 4px;
+  border: 4px solid transparent;
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--color-brass-dim) 0px,
+    var(--color-brass-dim) 4px,
+    transparent 4px,
+    transparent 8px,
+    var(--color-maroon) 8px,
+    var(--color-maroon) 12px,
+    transparent 12px,
+    transparent 16px
+  ) 4;
+}
+
+/* Jharokha arch shape */
+.jharokha-clip {
+  clip-path: polygon(
+    0% 15%, 5% 8%, 15% 3%, 30% 0%, 50% 0%, 70% 0%, 85% 3%, 95% 8%, 100% 15%,
+    100% 100%, 0% 100%
+  );
+}
+
+/* Subtle paisley-inspired decorative line */
+.paisley-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brass-dim) 15%,
+    var(--color-brass) 50%,
+    var(--color-brass-dim) 85%,
+    transparent 100%
+  );
+}
+
+/* Premium glass effect */
+.glass-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(44, 24, 16, 0.7) 0%,
+    rgba(26, 18, 12, 0.8) 50%,
+    rgba(44, 24, 16, 0.6) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+}
+
+/* Warm gradient backgrounds */
+.bg-haveli {
+  background: linear-gradient(
+    180deg,
+    var(--color-warm-black) 0%,
+    var(--color-warm-dark) 40%,
+    var(--color-warm-mid) 70%,
+    var(--color-warm-black) 100%
+  );
+}
+
+/* Brass shimmer animation */
+@keyframes brass-shimmer {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.brass-shimmer {
+  animation: brass-shimmer 4s ease-in-out infinite;
+}
+
+/* Ornamental line draw animation */
+@keyframes line-draw {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.line-draw {
+  animation: line-draw 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Floating ornamental particles */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-6px) rotate(1deg); }
+  66% { transform: translateY(3px) rotate(-0.5deg); }
+}
+
+.float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .brass-shimmer,
+  .float-gentle {
+    animation: none;
+  }
+}
+
+/* ─── Grain Texture Overlay ─── */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ─── Premium Utility Classes ─── */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* ─── Luxury Typography Utilities ─── */
+.text-primary-luxury {
+  color: var(--color-ivory);
+}
+
+.text-secondary-luxury {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+.text-muted-luxury {
+  color: rgba(196, 167, 125, 0.7);
+}
+
+.text-label-luxury {
+  color: rgba(245, 240, 232, 0.85);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.premium-section {
+  position: relative;
+}
+
+.premium-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--color-brass-dim), transparent);
+}
+
+/* Premium link underline effect */
+.link-premium {
+  position: relative;
+  display: inline-block;
+}
+
+.link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-brass);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-premium:hover::after {
+  width: 100%;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-brass-dim), var(--color-warm-mid));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-brass), var(--color-brass-dim));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brass-dim) var(--color-warm-black);
+}
+
+/* ─── Custom Scrollbar Class ─── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-brass-dim);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brass);
+}
+
+/* ─── Hide Scrollbar ─── */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

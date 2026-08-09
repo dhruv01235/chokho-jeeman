@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String    @id @default(uuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role      @default(CUSTOMER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  reservations  Reservation[]
+}
+
+model Account {
+  id                String  @id @default(uuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Reservation {
+  id            String   @id @default(uuid())
+  reservationId String   @unique
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id])
+  name          String
+  email         String
+  phone         String?
+  date          DateTime
+  timeSlot      String
+  partySize     Int
+  tableInfo     String?
+  status        Status   @default(BOOKED)
+  emailStatus   String   @default("PENDING")
+  createdAt     DateTime @default(now())
+}
+
+model MenuItem {
+  id            String   @id @default(uuid())
+  name          String
+  hindiName     String?
+  description   String?
+  price         Decimal
+  category      String
+  section       String?
+  context       String?   @default("dine-in")
+  image         String?
+  imageType     String?
+  includedItems String?   @db.Text
+  availability  String?   @default("daily")
+  isSignature   Boolean  @default(false)
+  imageUrl      String?
+  imageAlt      String?
+  imageUpdatedAt DateTime?
+}
+
+model InventoryItem {
+  id       String @id @default(uuid())
+  name     String
+  quantity Int
+  unit     String
+}
+
+model QueueItem {
+  id          String   @id @default(uuid())
+  name        String
+  partySize   Int
+  status      QueueStatus @default(WAITING)
+  estimatedAt DateTime
+  createdAt   DateTime @default(now())
+}
+
+model GalleryImage {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  imageUrl    String
+  imageAlt    String
+  category    String
+  sortOrder   Int      @default(0)
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+  STAFF
+}
+
+enum Status {
+  BOOKED
+  COMPLETED
+  CANCELLED
+  PENDING
+  CONFIRMED
+}
+
+enum QueueStatus {
+  WAITING
+  SEATED
+  CANCELLED
+}

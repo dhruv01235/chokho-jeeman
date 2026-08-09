@@ -1,0 +1,61 @@
+⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
+[next-auth][error][NO_SECRET] 
+https://next-auth.js.org/errors#no_secret Please define a `secret` in production. Error [MissingSecretError]: Please define a `secret` in production.
+    at r.assertConfig (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:11891)
+    at _ (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:17760)
+    at async a (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:125346)
+    at async e.length.t (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:126789)
+    at async X (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:136891)
+    at async Y (C:\Users\Dhruv Saraswat\chokho-jeeman\.next\server\chunks\[root-of-the-server]__0kptwha._.js:34:137969) {
+  code: 'NO_SECRET'
+}
